@@ -18,6 +18,8 @@ function Results({ answers, state }) {
       }
       setCorrect(count);
     }
+    // the comment below removes the error React Hook useEffect has missing dependencies:
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

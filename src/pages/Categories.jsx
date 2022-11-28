@@ -1,10 +1,8 @@
 import Category from "../components/Category";
 import {
-  triviaCategories,
   triviaCategories1,
   triviaCategories2,
   triviaCategories3,
-  triviaCategories4,
 } from "../store/categories";
 
 function Categories({ dispatch }) {

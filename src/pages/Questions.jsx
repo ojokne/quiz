@@ -47,12 +47,11 @@ function Questions({
     return array;
   }
   function handleFinish() {
-    navigate("/results");
-    // if (answers.length < 9) {
-    //   alert("Attempt all questions");
-    // } else {
-    //   navigate("/results");
-    // }
+    if (answers.length < 9) {
+      alert("Attempt all questions");
+    } else {
+      navigate("/results");
+    }
   }
   useEffect(() => {
     if (state.category === 0) {
@@ -60,6 +59,8 @@ function Questions({
     } else {
       fetchQuestions();
     }
+    // the comment below removes the error React Hook useEffect has missing dependencies:
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   if (loading) {
     return (
