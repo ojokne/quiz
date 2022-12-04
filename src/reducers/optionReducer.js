@@ -1,6 +1,6 @@
-import { ACTIONS } from "../App";
+import { ACTIONS } from "../store/constants";
 
-function reducer(state, action) {
+function optionReducer(state, action) {
   switch (action.type) {
     case ACTIONS.CHANGE_CATEGORY: {
       return { ...state, category: action.category };
@@ -17,4 +17,4 @@ function reducer(state, action) {
   }
 }
 
-export default reducer;
+export default optionReducer;
