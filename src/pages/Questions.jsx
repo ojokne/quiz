@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Question from "../components/Question";
 import FadeLoader from "react-spinners/ClipLoader";
+
 import {
   useAnswerDispatch,
   useAnswers,
@@ -70,7 +71,7 @@ function Questions() {
   if (loading) {
     return (
       <div className="flex flex-col h-96 justify-center items-center mt-3">
-        <FadeLoader color="#075985" />
+        <FadeLoader color="#075985" size={70} />
       </div>
     );
   }
