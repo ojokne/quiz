@@ -1,12 +1,12 @@
 import { createContext, useContext, useReducer } from "react";
 import answerReducer from "../reducers/answerReducer";
-import questionReducer from "../reducers/questionReducer";
+import optionReducer from "../reducers/optionReducer";
 import { DIFFICULTY } from "../store/constants";
 
-const Questions = createContext();
+const Options = createContext();
 const Answers = createContext();
 
-const QuestionDispatch = createContext();
+const OptionDispatch = createContext();
 const AnswerDispatch = createContext();
 
 function initialState() {
@@ -16,33 +16,33 @@ function initialState() {
   };
 }
 
-function QuestionProvider({ children }) {
-  const [questions, questionDispatch] = useReducer(
-    questionReducer,
+function ContextProvider({ children }) {
+  const [options, optionDispatch] = useReducer(
+    optionReducer,
     null,
     initialState
   );
   const [answers, answerDispatch] = useReducer(answerReducer, []);
   return (
-    <Questions.Provider value={questions}>
-      <QuestionDispatch.Provider value={questionDispatch}>
+    <Options.Provider value={options}>
+      <OptionDispatch.Provider value={optionDispatch}>
         <Answers.Provider value={answers}>
           <AnswerDispatch.Provider value={answerDispatch}>
             {children}
           </AnswerDispatch.Provider>
         </Answers.Provider>
-      </QuestionDispatch.Provider>
-    </Questions.Provider>
+      </OptionDispatch.Provider>
+    </Options.Provider>
   );
 }
-export default QuestionProvider;
+export default ContextProvider;
 
 export function useQuestions() {
-  return useContext(Questions);
+  return useContext(Options);
 }
 
 export function useQuestionsDispatch() {
-  return useContext(QuestionDispatch);
+  return useContext(OptionDispatch);
 }
 
 export function useAnswers() {
