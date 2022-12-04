@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import QuestionProvider from "./context/QuestionProvider";
+import ContextProvider from "./context/ContextProvider";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <QuestionProvider>
+      <ContextProvider>
         <App />
-      </QuestionProvider>
+      </ContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
