@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ACTIONS } from "../App";
 import { createMarkup } from "../pages/Questions";
+import { ACTIONS } from "../store/constants";
 
 function Question({ question, answerDispatch }) {
   const [action, setAction] = useState(ACTIONS.ANSWER);

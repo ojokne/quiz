@@ -1,5 +1,6 @@
-import { ACTIONS, DIFFICULTY } from "../App";
 import { useNavigate } from "react-router-dom";
+import { ACTIONS, DIFFICULTY } from "../store/constants";
+
 function Difficulty({ dispatch }) {
   const navigate = useNavigate();
   function handleChangeDifficulty(difficulty) {
