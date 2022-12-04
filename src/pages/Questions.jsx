@@ -2,25 +2,36 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Question from "../components/Question";
 import FadeLoader from "react-spinners/ClipLoader";
+import {
+  useAnswerDispatch,
+  useAnswers,
+  useOptions,
+} from "../context/ContextProvider";
 
 export function createMarkup(data) {
   return { __html: data };
 }
 
-function Questions({
-  state,
-  questions,
-  setQuestions,
-  answers,
-  answerDispatch,
-}) {
-  const navigate = useNavigate();
+function Questions() {
   const [loading, setLoading] = useState(true);
+  const [questions, setQuestions] = useState([]);
+
+  const options = useOptions();
+  const answers = useAnswers();
+
+  const navigate = useNavigate();
+  const answerDispatch = useAnswerDispatch();
+
+  function shuffle(array, data) {
+    let random = Math.floor((Math.random() * 1e16) % 4);
+    array.splice(random, 0, data);
+    return array;
+  }
 
   async function fetchQuestions() {
     const questions = new Array(10);
     const res = await fetch(
-      `https://opentdb.com/api.php?amount=10&category=${state.category}&difficulty=${state.difficulty}`
+      `https://opentdb.com/api.php?amount=10&category=${options.category}&difficulty=${options.difficulty}`
     );
     const { results } = await res.json();
     for (let i = 0; i < results.length; i++) {
@@ -40,12 +51,6 @@ function Questions({
     setQuestions(questions);
     setLoading(false);
   }
-
-  function shuffle(array, data) {
-    let random = Math.floor((Math.random() * 1e16) % 4);
-    array.splice(random, 0, data);
-    return array;
-  }
   function handleFinish() {
     if (answers.length < 9) {
       alert("Attempt all questions");
@@ -54,7 +59,7 @@ function Questions({
     }
   }
   useEffect(() => {
-    if (state.category === 0) {
+    if (options.category === 0) {
       navigate("/");
     } else {
       fetchQuestions();

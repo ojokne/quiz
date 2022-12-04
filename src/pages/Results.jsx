@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import { useAnswers, useOptions } from "../context/ContextProvider";
 import { useNavigate } from "react-router-dom";
 import Review from "../components/Review";
 
-function Results({ answers, state }) {
+function Results() {
+  const answers = useAnswers();
+  const options = useOptions();
   const navigate = useNavigate();
   const [correct, setCorrect] = useState();
 
   useEffect(() => {
     let count = 0;
-    if (state.category === 0) {
+    if (options.category === 0) {
       navigate("/");
     } else {
       for (let i = 0; i < answers.length; i++) {

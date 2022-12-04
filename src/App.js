@@ -6,11 +6,14 @@ import { Routes, Route } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import Questions from "./pages/Questions";
 import Results from "./pages/Results";
+import { useOptions } from "./context/ContextProvider";
 
 function App() {
+  const options = useOptions();
   return (
     <div className="antialiased font-sans">
       <Header />
+      {JSON.stringify(options)}
       <div className="max-w-4xl m-auto">
         <Routes>
           <Route path="/" element={<Categories />}></Route>

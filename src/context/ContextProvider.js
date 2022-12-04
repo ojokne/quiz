@@ -37,11 +37,11 @@ function ContextProvider({ children }) {
 }
 export default ContextProvider;
 
-export function useQuestions() {
+export function useOptions() {
   return useContext(Options);
 }
 
-export function useQuestionsDispatch() {
+export function useOptionsDispatch() {
   return useContext(OptionDispatch);
 }
 

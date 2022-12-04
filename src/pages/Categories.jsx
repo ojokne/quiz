@@ -1,5 +1,5 @@
 import Category from "../components/Category";
-import { useQuestionsDispatch } from "../context/ContextProvider";
+import { useOptionsDispatch } from "../context/ContextProvider";
 import {
   triviaCategories1,
   triviaCategories2,
@@ -7,7 +7,7 @@ import {
 } from "../store/constants";
 
 function Categories() {
-  const optionsDispatch = useQuestionsDispatch();
+  const optionDispatch = useOptionsDispatch();
   return (
     <div>
       <h1 className="text-center font-bold text-2xl p-3 m-3">
@@ -21,7 +21,7 @@ function Categories() {
                 <Category
                   key={category.id}
                   category={category}
-                  dispatch={optionsDispatch}
+                  dispatch={optionDispatch}
                 />
               );
             })}
@@ -32,7 +32,7 @@ function Categories() {
                 <Category
                   key={category.id}
                   category={category}
-                  dispatch={optionsDispatch}
+                  dispatch={optionDispatch}
                 />
               );
             })}
@@ -43,7 +43,7 @@ function Categories() {
                 <Category
                   key={category.id}
                   category={category}
-                  dispatch={optionsDispatch}
+                  dispatch={optionDispatch}
                 />
               );
             })}
