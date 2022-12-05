@@ -6,7 +6,7 @@ function Review({ answer }) {
 
   if (answer.isCorrect) {
     return (
-      <div className="border-2 border-green-500 rounded-md p-2.5 m-2.5 lg:mx-2.5  shadow-md">
+      <div className="border-2 rounded-md p-2.5 m-2.5 lg:mx-2.5  shadow-md">
         <div className="flex flex-row m-2 p-2 text-green-500">
           <i>
             <FaCheck style={styleCheck} />
@@ -25,7 +25,7 @@ function Review({ answer }) {
     );
   } else {
     return (
-      <div className="border-2 border-rose-500 rounded-md p-2.5 m-2.5 lg:mx-2.5  shadow-md">
+      <div className="border-2 rounded-md p-2.5 m-2.5 lg:mx-2.5  shadow-md">
         <div className="flex flex-row m-2 p-2 text-rose-500">
           <i>
             <FaTimes style={styleTimes} />
