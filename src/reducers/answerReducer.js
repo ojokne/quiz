@@ -29,6 +29,10 @@ function answerReducer(state, action) {
       });
     }
 
+    case ACTIONS.CLEAR_STATE: {
+      return [];
+    }
+
     default: {
       return state;
     }
