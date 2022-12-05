@@ -29,13 +29,14 @@ export const triviaCategories1 = [
     id: 12,
     name: "Entertainment: Music",
   },
-  {
-    id: 13,
-    name: "Entertainment: Musicals & Theatres",
-  },
+
   {
     id: 14,
     name: "Entertainment: Television",
+  },
+  {
+    id: 15,
+    name: "Entertainment: Video Games",
   },
   {
     id: 32,
@@ -95,10 +96,6 @@ export const triviaCategories3 = [
     name: "Politics",
   },
   {
-    id: 25,
-    name: "Art",
-  },
-  {
     id: 26,
     name: "Celebrities",
   },
@@ -107,7 +104,7 @@ export const triviaCategories3 = [
     name: "Vehicles",
   },
   {
-    id: 30,
-    name: "Science: Gadgets",
+    id: 31,
+    name: "Entertainment: Japanese Anime & Manga",
   },
 ];
