@@ -1,6 +1,5 @@
-import { ACTIONS } from "../App";
 import { useNavigate } from "react-router-dom";
-
+import { ACTIONS } from "../store/constants";
 function Category({ category, dispatch }) {
   const navigate = useNavigate();
   function handleChangeCategory() {

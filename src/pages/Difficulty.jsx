@@ -1,11 +1,24 @@
-import { ACTIONS, DIFFICULTY } from "../App";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-function Difficulty({ dispatch }) {
+import { useOptions, useOptionsDispatch } from "../context/ContextProvider";
+import { ACTIONS, DIFFICULTY } from "../store/constants";
+
+function Difficulty() {
+  const options = useOptions();
   const navigate = useNavigate();
+  const optionDispatch = useOptionsDispatch();
   function handleChangeDifficulty(difficulty) {
-    dispatch({ type: ACTIONS.CHANGE_DIFFICULTY, difficulty: difficulty });
+    optionDispatch({
+      type: ACTIONS.CHANGE_DIFFICULTY,
+      difficulty: difficulty,
+    });
     navigate("/questions");
   }
+  useEffect(() => {
+    if (options.category === 0) {
+      navigate("/");
+    }
+  });
   return (
     <div className="flex flex-col h-96 justify-center items-center mt-3">
       <h1 className="font-bold text-2xl m-3 p-3 text-sky-800">

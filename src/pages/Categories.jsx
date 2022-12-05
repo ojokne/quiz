@@ -1,11 +1,13 @@
 import Category from "../components/Category";
+import { useOptionsDispatch } from "../context/ContextProvider";
 import {
   triviaCategories1,
   triviaCategories2,
   triviaCategories3,
-} from "../store/categories";
+} from "../store/constants";
 
-function Categories({ dispatch }) {
+function Categories() {
+  const optionDispatch = useOptionsDispatch();
   return (
     <div>
       <h1 className="text-center font-bold text-2xl p-3 m-3 text-sky-800">
@@ -19,7 +21,7 @@ function Categories({ dispatch }) {
                 <Category
                   key={category.id}
                   category={category}
-                  dispatch={dispatch}
+                  dispatch={optionDispatch}
                 />
               );
             })}
@@ -30,7 +32,7 @@ function Categories({ dispatch }) {
                 <Category
                   key={category.id}
                   category={category}
-                  dispatch={dispatch}
+                  dispatch={optionDispatch}
                 />
               );
             })}
@@ -41,22 +43,11 @@ function Categories({ dispatch }) {
                 <Category
                   key={category.id}
                   category={category}
-                  dispatch={dispatch}
+                  dispatch={optionDispatch}
                 />
               );
             })}
           </div>
-          {/* <div>
-        {triviaCategories4.map((category) => {
-          return (
-            <Category
-            key={category.id}
-            category={category}
-            dispatch={dispatch}
-            />
-            );
-          })}
-        </div> */}
         </div>
       </div>
     </div>

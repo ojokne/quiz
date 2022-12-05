@@ -1,3 +1,17 @@
+export const ACTIONS = {
+  CHANGE_CATEGORY: "change category of quiz",
+  CHANGE_DIFFICULTY: "change quiz difficulty",
+  CLEAR_STATE: "remove state data",
+  ANSWER: "answer",
+  UPDATE: "update",
+};
+
+export const DIFFICULTY = {
+  EASY: "easy",
+  MEDIUM: "medium",
+  HARD: "hard",
+};
+
 export const triviaCategories1 = [
   {
     id: 9,

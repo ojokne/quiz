@@ -1,4 +1,4 @@
-import { ACTIONS } from "../App";
+import { ACTIONS } from "../store/constants";
 
 function answerReducer(state, action) {
   switch (action.type) {
