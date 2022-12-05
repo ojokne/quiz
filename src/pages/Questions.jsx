@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Question from "../components/Question";
 import FadeLoader from "react-spinners/ClipLoader";
-
 import {
   useAnswerDispatch,
   useAnswers,
@@ -14,20 +13,12 @@ export function createMarkup(data) {
 }
 
 function Questions() {
-  const [loading, setLoading] = useState(true);
-  const [questions, setQuestions] = useState([]);
-
-  const options = useOptions();
-  const answers = useAnswers();
-
   const navigate = useNavigate();
+  const answers = useAnswers();
+  const options = useOptions();
   const answerDispatch = useAnswerDispatch();
-
-  function shuffle(array, data) {
-    let random = Math.floor((Math.random() * 1e16) % 4);
-    array.splice(random, 0, data);
-    return array;
-  }
+  const [questions, setQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   async function fetchQuestions() {
     const questions = new Array(10);
@@ -52,6 +43,12 @@ function Questions() {
     setQuestions(questions);
     setLoading(false);
   }
+
+  function shuffle(array, data) {
+    let random = Math.floor((Math.random() * 1e16) % 4);
+    array.splice(random, 0, data);
+    return array;
+  }
   function handleFinish() {
     if (answers.length < 9) {
       alert("Attempt all questions");
@@ -71,7 +68,7 @@ function Questions() {
   if (loading) {
     return (
       <div className="flex flex-col h-96 justify-center items-center mt-3">
-        <FadeLoader color="#075985" size={70} />
+        <FadeLoader color="#075985" />
       </div>
     );
   }
