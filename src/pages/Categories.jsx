@@ -8,7 +8,7 @@ import {
 function Categories({ dispatch }) {
   return (
     <div>
-      <h1 className="text-center font-bold text-2xl p-3 m-3">
+      <h1 className="text-center font-bold text-2xl p-3 m-3 text-sky-800">
         Choose a category
       </h1>
       <div className="flex justify-center items-center mt-3">

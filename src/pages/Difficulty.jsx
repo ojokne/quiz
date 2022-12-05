@@ -8,7 +8,9 @@ function Difficulty({ dispatch }) {
   }
   return (
     <div className="flex flex-col h-96 justify-center items-center mt-3">
-      <h1 className="font-bold text-2xl m-3 p-3">Choose a difficulty</h1>
+      <h1 className="font-bold text-2xl m-3 p-3 text-sky-800">
+        Choose a difficulty
+      </h1>
       <div>
         <button
           className="p-2 m-2 bg-sky-800 text-slate-200 w-64 lg:w-60  font-medium rounded-md hover:ring-4 hover:ring-offset-2 hover:scale-95"
