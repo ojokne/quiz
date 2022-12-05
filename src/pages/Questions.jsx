@@ -14,9 +14,10 @@ export function createMarkup(data) {
 
 function Questions() {
   const navigate = useNavigate();
-  const answers = useAnswers();
   const options = useOptions();
+  const answers = useAnswers();
   const answerDispatch = useAnswerDispatch();
+
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -40,6 +41,7 @@ function Questions() {
       };
       questions[i] = obj;
     }
+
     setQuestions(questions);
     setLoading(false);
   }
@@ -57,6 +59,7 @@ function Questions() {
     }
   }
   useEffect(() => {
+    setQuestions([]);
     if (options.category === 0) {
       navigate("/");
     } else {
@@ -81,7 +84,7 @@ function Questions() {
       </div>
       <div>
         <button
-          className="p-2 m-2 bg-sky-800 text-slate-200 w-64 lg:w-60  font-medium rounded-md hover:ring-4 hover:ring-offset-2 hover:scale-95"
+          className="p-2 m-2 bg-sky-800 text-slate-200 w-80 lg:w-64  font-medium rounded-md hover:ring-4 hover:ring-offset-2 hover:scale-95"
           onClick={handleFinish}
         >
           Submit
