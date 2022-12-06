@@ -5,7 +5,7 @@ function Footer() {
   const style = { fontSize: "1.5em" };
 
   return (
-    <div className="text-slate-300 p-2 flex flex-col justify-center items-center">
+    <div className="bg-slate-900 text-slate-300 p-2 flex flex-col justify-center items-center h-48 overscroll-contain">
       <div className="hover:scale-90">
         <a
           href="https://github.com/ojokne/quiz"
@@ -17,8 +17,9 @@ function Footer() {
         </a>
       </div>
       <div>
-        <p>Copyright &copy; {year}</p>
+        <p>Copyright&copy; {year}</p>
       </div>
+      {/* <div></div> */}
     </div>
   );
 }
