@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -5,7 +6,9 @@ import { Link } from "react-router-dom";
 import Menu from "./Menu";
 
 function Header() {
-  const style = { color: "#cbd5e1", fontSize: "1.5em" };
+  const style = useMemo(() => {
+    return { color: "#cbd5e1", fontSize: "1.5em" };
+  }, []);
   const [display, setDisplay] = useState(false);
   const [mobileStyle, setMobileStyle] = useState("hidden");
   const [icon, setIcon] = useState(<FaBars style={style} />);
@@ -15,10 +18,6 @@ function Header() {
     col: "flex-col",
   };
 
-  // function toggleMenu() {
-  //   const newValue = display;
-  //   setDisplay(!newValue);
-  // }
   useEffect(() => {
     if (display) {
       setMobileStyle("lg:hidden");
@@ -27,7 +26,7 @@ function Header() {
       setMobileStyle("hidden");
       setIcon(<FaBars style={style} />);
     }
-  }, [display]);
+  }, [display, style]);
   return (
     <div className="shadow bg-slate-900 shadow-slate-700  text-slate-300">
       <div className="max-w-4xl m-auto flex flex-row justify-between items-center ">
