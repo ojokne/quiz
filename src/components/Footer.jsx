@@ -6,13 +6,12 @@ function Footer() {
 
   return (
     <div className="bg-sky-800 text-slate-200 p-2 flex flex-col justify-center items-center">
-      <div>
+      <div className="hover:scale-90">
         <a
           href="https://github.com/ojokne/quiz"
           rel="noreferrer"
           target="_blank"
-          className="m-3
-          "
+          className="m-1.5"
         >
           <FaGithub style={style} />
         </a>
