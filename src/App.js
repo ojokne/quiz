@@ -7,6 +7,8 @@ import ErrorPage from "./pages/ErrorPage";
 import Questions from "./pages/Questions";
 import Results from "./pages/Results";
 import Footer from "./components/Footer";
+import About from "./pages/About";
+import Instructions from "./pages/Instructions";
 
 function App() {
   return (
@@ -14,10 +16,13 @@ function App() {
       <Header />
       <div className="max-w-4xl m-auto">
         <Routes>
-          <Route path="/" element={<Categories />}></Route>
-          <Route path="/difficulty" element={<Difficulty />}></Route>
-          <Route path="/questions" element={<Questions />}></Route>
+          <Route path="/" element={<Categories />} />
+          <Route path="/difficulty" element={<Difficulty />} />
+          <Route path="/questions" element={<Questions />} />
           <Route path="/results" element={<Results />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/instructions" element={<Instructions />} />
+
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
       </div>
