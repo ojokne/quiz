@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Menu from "./Menu";
 
 function Header() {
+  const style = { color: "white", fontSize: "1.5em" };
   const [display, setDisplay] = useState(false);
   const [mobileStyle, setMobileStyle] = useState("hidden");
+  const [icon, setIcon] = useState(<FaBars style={style} />);
 
-  const style = { color: "white", fontSize: "1.5em" };
   const direction = {
     row: "flex-row",
     col: "flex-col",
@@ -17,8 +18,10 @@ function Header() {
     setDisplay(!display);
     if (display) {
       setMobileStyle("lg:hidden");
+      setIcon(<FaTimes style={style} />);
     } else {
       setMobileStyle("hidden");
+      setIcon(<FaBars style={style} />);
     }
   }
   return (
@@ -29,7 +32,7 @@ function Header() {
         </h1>
         <div className="mx-2 px-2">
           <span onClick={toggleMenu} className="lg:hidden p2.5 m-2.5">
-            <FaBars style={style} />
+            {icon}
           </span>
         </div>
         <div className="hidden lg:block">
