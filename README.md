@@ -9,6 +9,7 @@ There are **23** categories for the quiz and three difficulty levels
 - Medium
 - Hard
 
+The app also features both a light and dark mode. The dark mode is only accessible if the device setting for dark mode is enabled otherwise the ligth mode is shown by default
 
 [Visit site](https://quiz-oen.vercel.app/)
 
