@@ -15,8 +15,9 @@ function Header() {
   };
 
   function toggleMenu() {
-    setDisplay(!display);
-    if (display) {
+    const newValue = display;
+    setDisplay(!newValue);
+    if (newValue) {
       setMobileStyle("lg:hidden");
       setIcon(<FaTimes style={style} />);
     } else {
