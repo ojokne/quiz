@@ -21,13 +21,13 @@ function Difficulty() {
   });
   return (
     <div className="flex flex-col h-96 justify-center items-center mt-3">
-      <div className="border-2 rounded-md p-1.5 my-2.5 lg:mx-2.5  shadow-md">
-        <h1 className="font-bold border-b-2 text-2xl m-3 p-3 text-sky-800">
+      <div className="border-2 border-slate-700 rounded-md p-1.5 my-2.5 lg:mx-2.5  shadow-md">
+        <h1 className="font-bold text-2xl m-3 p-3 text-slate-300">
           Choose a difficulty
         </h1>
         <div>
           <button
-            className="p-2 m-2 bg-sky-800 text-slate-200 w-72 lg:w-60  font-medium rounded-md hover:ring-4 hover:ring-offset-2 hover:scale-95"
+            className="p-2 m-2 bg-slate-700 text-slate-300 w-72 lg:w-60  font-medium rounded-md hover:ring-4 hover:ring-slate-700 hover:ring-offset-2 hover:scale-95"
             id={DIFFICULTY.EASY}
             onClick={() => handleChangeDifficulty(DIFFICULTY.EASY)}
           >
@@ -36,7 +36,7 @@ function Difficulty() {
         </div>
         <div>
           <button
-            className="p-2 m-2 bg-sky-800 text-slate-200 w-72 lg:w-60  font-medium rounded-md hover:ring-4 hover:ring-offset-2 hover:scale-95"
+            className="p-2 m-2 bg-slate-700 text-slate-300 w-72 lg:w-60  font-medium rounded-md hover:ring-4 hover:ring-slate-700 hover:ring-offset-2 hover:scale-95"
             id={DIFFICULTY.MEDIUM}
             onClick={() => handleChangeDifficulty(DIFFICULTY.MEDIUM)}
           >
@@ -45,7 +45,7 @@ function Difficulty() {
         </div>
         <div>
           <button
-            className="p-2 m-2 mb-6 bg-sky-800 text-slate-200 w-72 lg:w-60  font-medium rounded-md hover:ring-4 hover:ring-offset-2 hover:scale-95"
+            className="p-2 m-2 mb-6 bg-slate-700 text-slate-200 w-72 lg:w-60  font-medium rounded-md hover:ring-4 hover:ring-slate-700 hover:ring-offset-2 hover:scale-95"
             id={DIFFICULTY.HARD}
             onClick={() => handleChangeDifficulty(DIFFICULTY.HARD)}
           >

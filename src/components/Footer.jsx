@@ -5,7 +5,7 @@ function Footer() {
   const style = { fontSize: "1.5em" };
 
   return (
-    <div className="bg-sky-800 text-slate-200 p-2 flex flex-col justify-center items-center">
+    <div className="text-slate-300 p-2 flex flex-col justify-center items-center">
       <div className="hover:scale-90">
         <a
           href="https://github.com/ojokne/quiz"

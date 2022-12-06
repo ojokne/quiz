@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Menu from "./Menu";
 
 function Header() {
-  const style = { color: "white", fontSize: "1.5em" };
+  const style = { color: "#cbd5e1", fontSize: "1.5em" };
   const [display, setDisplay] = useState(false);
   const [mobileStyle, setMobileStyle] = useState("hidden");
   const [icon, setIcon] = useState(<FaBars style={style} />);
@@ -25,7 +25,7 @@ function Header() {
     }
   }
   return (
-    <div className="bg-sky-800 shadow shadow-slate-500 text-slate-200">
+    <div className="shadow shadow-slate-700 text-slate-300">
       <div className="max-w-4xl m-auto flex flex-row justify-between items-center ">
         <h1 className="p2.5 m-2.5 text-2xl font-bold">
           <Link to="/">Quiz</Link>

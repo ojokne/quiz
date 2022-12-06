@@ -36,10 +36,10 @@ function Question({ question, answerDispatch }) {
     let parent = e.target.parentElement;
     for (let child of parent.children) {
       child.classList.remove("font-bold");
-      child.classList.remove("text-sky-800");
+      child.classList.remove("text-green-300");
     }
     e.target.classList.add("font-bold");
-    e.target.classList.add("text-sky-800");
+    e.target.classList.add("text-green-300");
 
     if (action === ACTIONS.ANSWER) {
       handleAnswer(e, id, question, answer);
@@ -49,11 +49,11 @@ function Question({ question, answerDispatch }) {
     }
   }
   return (
-    <div className="">
-      <div className="border-2 rounded-md p-2.5 m-2.5 lg:mx-2.5  shadow-md">
+    <div>
+      <div className="border-2 border-slate-700 rounded-md p-2.5 m-2.5 lg:mx-2.5  shadow-md text-slate-300">
         <div>
           <p
-            className="font-medium text-lg m-2 p-2 border-b-2 "
+            className="font-medium text-lg m-2 p-2 border-b-2 border-slate-700 "
             dangerouslySetInnerHTML={question.question}
           ></p>
         </div>

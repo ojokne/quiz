@@ -71,7 +71,7 @@ function Questions() {
   if (loading) {
     return (
       <div className="flex flex-col h-96 justify-center items-center mt-3">
-        <FadeLoader color="#075985" />
+        <FadeLoader color="#cbd5e1" />
       </div>
     );
   }
@@ -84,7 +84,7 @@ function Questions() {
       </div>
       <div>
         <button
-          className="p-2 m-2 bg-sky-800 text-slate-200 w-80 lg:w-64  font-medium rounded-md hover:ring-4 hover:ring-offset-2 hover:scale-95"
+          className="p-2 m-2 bg-slate-700 text-slate-300 w-80 lg:w-64  font-medium rounded-md hover:ring-4 hover:ring-slate-700 hover:ring-offset-2 hover:scale-95"
           onClick={handleFinish}
         >
           Submit

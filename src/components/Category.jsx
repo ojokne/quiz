@@ -9,7 +9,7 @@ function Category({ category, dispatch }) {
   return (
     <div>
       <button
-        className="p-2 m-2 bg-sky-800 text-slate-200 w-72 lg:w-60  font-medium rounded-md hover:ring-4 hover:ring-offset-2 hover:scale-95"
+        className="p-2 m-2 bg-slate-700 text-slate-300 w-72 lg:w-60  font-medium rounded-md hover:ring-4 hover:ring-slate-700 hover:ring-offset-2 hover:scale-95"
         id={category.id}
         onClick={() => handleChangeCategory()}
       >
