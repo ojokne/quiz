@@ -12,7 +12,7 @@ import Instructions from "./pages/Instructions";
 
 function App() {
   return (
-    <div className="antialiased font-sans bg-slate-900">
+    <div className="antialiased font-sans bg-slate-200 dark:bg-slate-900">
       <Header />
       <div className="max-w-4xl m-auto">
         <Routes>

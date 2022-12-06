@@ -48,7 +48,7 @@ function Results() {
   return (
     <div className="flex flex-col justify-center items-center">
       <div>
-        <p className="font-bold text-center m-2 p-2 text-slate-300">
+        <p className="font-bold text-center m-2 p-2 text-slate-700 dark:text-slate-300">
           You passed {correct}
         </p>
         {answers.map((a) => {

@@ -72,6 +72,7 @@ function Questions() {
     return (
       <div className="flex flex-col h-96 justify-center items-center mt-3">
         <FadeLoader color="#cbd5e1" />
+        <p className="text-slate-300">Loading ...</p>
       </div>
     );
   }
