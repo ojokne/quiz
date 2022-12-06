@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -14,17 +15,19 @@ function Header() {
     col: "flex-col",
   };
 
-  function toggleMenu() {
-    const newValue = display;
-    setDisplay(!newValue);
-    if (newValue) {
+  // function toggleMenu() {
+  //   const newValue = display;
+  //   setDisplay(!newValue);
+  // }
+  useEffect(() => {
+    if (display) {
       setMobileStyle("lg:hidden");
       setIcon(<FaTimes style={style} />);
     } else {
       setMobileStyle("hidden");
       setIcon(<FaBars style={style} />);
     }
-  }
+  }, [display]);
   return (
     <div className="shadow bg-slate-900 shadow-slate-700  text-slate-300">
       <div className="max-w-4xl m-auto flex flex-row justify-between items-center ">
@@ -32,7 +35,12 @@ function Header() {
           <Link to="/">Quiz</Link>
         </h1>
         <div className="mx-2 px-2">
-          <span onClick={toggleMenu} className="lg:hidden p2.5 m-2.5">
+          <span
+            onClick={() => {
+              setDisplay(!display);
+            }}
+            className="lg:hidden p2.5 m-2.5"
+          >
             {icon}
           </span>
         </div>
