@@ -46,7 +46,7 @@ function Results() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center mt-16 pt-3 lg:mt-14">
       <div>
         <p className="font-bold text-center m-2 p-2 text-slate-700 dark:text-slate-300">
           You passed {correct}

@@ -20,8 +20,8 @@ function Difficulty() {
     }
   });
   return (
-    <div className="flex flex-col justify-center items-center my-20">
-      <div className="border-2  border-slate-300 dark:border-slate-700 rounded-md p-1.5 my-2.5 lg:mx-2.5  shadow-md">
+    <div className="flex flex-col justify-center items-center m-14">
+      <div className="border-2  border-slate-300 dark:border-slate-700 rounded-md p-1.5 my-10 lg:mx-2.5  shadow-md">
         <h1 className="font-bold text-2xl m-3 p-3 text-slate-700 dark:text-slate-300 text-center">
           Choose a difficulty
         </h1>

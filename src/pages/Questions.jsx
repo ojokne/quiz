@@ -70,14 +70,14 @@ function Questions() {
   }, []);
   if (loading) {
     return (
-      <div className="flex flex-col h-96 justify-center items-center mt-3">
+      <div className="flex flex-col h-96 justify-center items-center mt-16 pt-3 lg:mt-14">
         <FadeLoader color="#cbd5e1" />
         <p className="text-slate-300">Loading ...</p>
       </div>
     );
   }
   return (
-    <div className="flex flex-col justify-center items-center mt-3">
+    <div className="flex flex-col justify-center items-center mt-16 pt-3 lg:mt-14">
       <div>
         {questions.map((q) => (
           <Question key={q.id} question={q} answerDispatch={answerDispatch} />
