@@ -30,3 +30,6 @@ npm install
 ```
 npm start
 ```
+
+## Features
+- [ ] Fix nav bar at the top https://github.com/ojokne/quiz/issues/2
