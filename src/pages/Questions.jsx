@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Question from "../components/Question";
 import FadeLoader from "react-spinners/ClipLoader";
@@ -21,30 +21,33 @@ function Questions() {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  async function fetchQuestions() {
-    const questions = new Array(10);
-    const res = await fetch(
-      `https://opentdb.com/api.php?amount=10&category=${options.category}&difficulty=${options.difficulty}`
-    );
-    const { results } = await res.json();
-    for (let i = 0; i < results.length; i++) {
-      let question = results[i];
-      let obj = {
-        id: i,
-        category: question.category,
-        type: question.type,
-        difficulty: question.difficulty,
-        question: createMarkup(question.question),
-        correct_answer: question.correct_answer,
-        answers: shuffle(question.incorrect_answers, question.correct_answer),
-        createMarkup: createMarkup,
-      };
-      questions[i] = obj;
-    }
+  const fetchFunction = useCallback(
+    async function fetchQuestions() {
+      const questions = new Array(10);
+      const res = await fetch(
+        `https://opentdb.com/api.php?amount=10&category=${options.category}&difficulty=${options.difficulty}`
+      );
+      const { results } = await res.json();
+      for (let i = 0; i < results.length; i++) {
+        let question = results[i];
+        let obj = {
+          id: i,
+          category: question.category,
+          type: question.type,
+          difficulty: question.difficulty,
+          question: createMarkup(question.question),
+          correct_answer: question.correct_answer,
+          answers: shuffle(question.incorrect_answers, question.correct_answer),
+          createMarkup: createMarkup,
+        };
+        questions[i] = obj;
+      }
 
-    setQuestions(questions);
-    setLoading(false);
-  }
+      setQuestions(questions);
+      setLoading(false);
+    },
+    [options.category, options.difficulty]
+  );
 
   function shuffle(array, data) {
     let random = Math.floor((Math.random() * 1e16) % 4);
@@ -63,11 +66,9 @@ function Questions() {
     if (options.category === 0) {
       navigate("/");
     } else {
-      fetchQuestions();
+      fetchFunction();
     }
-    // the comment below removes the error React Hook useEffect has missing dependencies:
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [fetchFunction, options.category, navigate]);
   if (loading) {
     return (
       <div className="flex flex-col h-96 justify-center items-center mt-16 pt-3 lg:mt-14">
