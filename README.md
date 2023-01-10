@@ -1,7 +1,7 @@
-# Quiz ⚛🤔
+# Trivia ⚛🤔
 
 ## About
-The quiz app is a [React.js](https://reactjs.org/) application. It consumes an open source API provided by [Open Trivia Database](https://opentdb.com/api_config.php)
+The Trivia is a [React.js](https://reactjs.org/) application. It consumes an open source API provided by [Open Trivia Database](https://opentdb.com/api_config.php)
 
 There are **23** categories for the quiz and three difficulty levels
 
@@ -9,7 +9,7 @@ There are **23** categories for the quiz and three difficulty levels
 - Medium
 - Hard
 
-The app also features both a light and dark mode. The dark mode is only accessible if the device setting for dark mode is enabled otherwise the ligth mode is shown by default
+The game also features both a light and dark mode. The dark mode is only accessible if the device setting for dark mode is enabled otherwise the ligth mode is shown by default
 
 [Visit site](https://quiz-oen.vercel.app/)
 
