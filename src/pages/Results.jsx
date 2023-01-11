@@ -41,9 +41,7 @@ function Results() {
       }
       setCorrect(count);
     }
-    // the comment below removes the error React Hook useEffect has missing dependencies:
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [answers,navigate,options]);
 
   return (
     <div className="flex flex-col justify-center items-center mt-16 pt-3 lg:mt-14">
