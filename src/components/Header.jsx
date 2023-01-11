@@ -31,7 +31,7 @@ function Header() {
     <div className="shadow bg-slate-900 shadow-slate-700  text-slate-300 fixed top-0 z-50 w-full">
       <div className="max-w-4xl m-auto flex flex-row justify-between items-center ">
         <h1 className="p2.5 m-2.5 text-2xl font-bold">
-          <Link to="/">Quiz</Link>
+          <Link to="/">Trivia Game</Link>
         </h1>
         <div className="mx-2 px-2">
           <span
